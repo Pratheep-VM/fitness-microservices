@@ -20,7 +20,7 @@ public class UserController {
 
     }
 
-    @GetMapping("register")
+    @PostMapping("register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest request) {
         return ResponseEntity.ok(userService.register(request));
     }
