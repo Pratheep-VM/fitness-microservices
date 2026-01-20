@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: userservice
+    name: user-service
   datasource:
     url: jdbc:postgresql://localhost:5432/fitness_user_db
     username: pradeep
@@ -13,7 +13,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
 
 
 
