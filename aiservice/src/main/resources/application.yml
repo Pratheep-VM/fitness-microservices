@@ -8,7 +8,21 @@ spring:
   mongodb:
     uri: mongodb://localhost:27017/fitnessrecommendation
 
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
